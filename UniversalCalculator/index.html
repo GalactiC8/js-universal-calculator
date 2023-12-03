@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<title>Калькулятор</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link href="../UniversalCalculator/css/style.css" rel="stylesheet">
+	
+	<script src="../UniversalCalculator/js/main.js"></script>
+	<script src="../UniversalCalculator/js/calculate.js"></script>
+	<script src="../UniversalCalculator/js/types/Complex.js"></script>
+	<script src="../UniversalCalculator/js/calculators/RealCalculator.js"></script>
+	<script src="../UniversalCalculator/js/calculators/ComplexCalculator.js"></script>
+	
+
+</head>
+<body>
+<div class="Real_Calculator">
+	<input class="input_a" size="4" />
+	<select class="select_operation">
+	  <option value="+" >+</option>
+	  <option value="-" >-</option>
+	  <option value="*" >*</option>
+	  <option value="/" >/</option>
+      <option value="^" >^</option>
+      <option value="prod" >prod</option>
+	  <option value="one" >one</option>
+	  <option value="zero" >zero</option>
+	</select>
+	<input class="input_b" size="4" />
+	<button class="buttonResult">=</button>
+	<p class="output"></p>
+</div>
+</body>
+</html>
