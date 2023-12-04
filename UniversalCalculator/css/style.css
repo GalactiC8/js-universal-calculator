@@ -1,11 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+:root {font-family: 'Poppins', sans-serif;}
 body {
-    margin: 0;
-    display: flex;
-    min-height: 100vh;
     background-color: rgb(45, 56, 65);
 }
 
-.output {
+.output, .outputComplex {
     color:aliceblue;
+    font-weight: bold;
+    font-size: large;
+    border-bottom: 1px white solid;
+}
+.Real_Calculator_Container, .Complex_Calculator_Container {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
 }
 
+.Real_Calculator_Result_Container, .Complex_Calculator_Result_Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.select_operation {
+    height: 32px;
+    
+}
+
+.form__group {
+    position: relative;
+    padding: 15px 0 0;
+    margin-top: 10px;
+    width: 200px;
+}
+.form__field {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    font-size: 1.3rem;
+    color: #fff;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+.form__field::placeholder {
+    color: transparent;
+}
+.form__field:placeholder-shown ~ .form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+}
+.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #9b9b9b;
+}
+.form__field:focus {
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, #11998e, #38ef7d);
+    border-image-slice: 1;
+}
+.form__field:focus ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #11998e;
+    font-weight: 700;
+}
+/* reset input */
+.form__field:required, .form__field:invalid {
+    box-shadow: none;
+}
