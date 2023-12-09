@@ -1,77 +1,35 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
 	<meta charset="utf-8">
-	<title>Калькулятор</title>
+	<title>Универсальный Калькулятор</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link href="../UniversalCalculator/css/style.css" rel="stylesheet">
-
-	<script src="../UniversalCalculator/js/main.js"></script>
+	<link rel="icon" href="favicon.png" type="image/x-icon">
 	<script src="../UniversalCalculator/js/types/Complex.js"></script>
+	<script src="../UniversalCalculator/js/types/Vector.js"></script>
+	<script src="../UniversalCalculator/js/types/Matrix.js"></script>
 	<script src="../UniversalCalculator/js/calculators/RealCalculator.js"></script>
 	<script src="../UniversalCalculator/js/calculators/ComplexCalculator.js"></script>
-
-
+	<script src="../UniversalCalculator/js/calculators/VectorCalculator.js"></script>
+	<script src="../UniversalCalculator/js/calculators/MatrixCalculator.js"></script>
+	<script src="../UniversalCalculator/js/main.js"></script>
 </head>
-
 <body>
-	<div class="Real_Calculator">
-		<div class="Real_Calculator_Container"> 
-			<div class="form__group field">
-				<input type="input" class="form__field" placeholder="A" name="input_a" id='input_a' required />
-				<label for="input_a" class="form__label">Input A</label>
-			</div>
-			<select class="select_operation">
-				<option value="add">+</option>
-				<option value="sub">-</option>
-				<option value="mult">*</option>
-				<option value="div">/</option>
-				<option value="pow">^</option>
-			</select>
-			<div class="form__group field">
-				<input type="input" class="form__field" placeholder="B" name="input_b" id='input_b' required />
-				<label for="input_b" class="form__label">Input B</label>
-			</div>
-		</div>
-		<div class="Real_Calculator_Result_Container">
-			<button class="buttonResult">=</button>
-			<p class="output"></p>
-		</div>
+	<div class="textareas">
+		<textarea placeholder="Input A" rows="20"  id="input_a" cols="40" class="ui-autocomplete-input"  role="textbox" aria-autocomplete="list" aria-haspopup="true"></textarea>
+		<textarea placeholder="Input B" rows="20"  id="input_b" cols="40" class="ui-autocomplete-input"  role="textbox" aria-autocomplete="list" aria-haspopup="true"></textarea>
+		<textarea placeholder="Result" rows="20"  id="output_c" cols="40" class="ui-autocomplete-input"  role="textbox" aria-autocomplete="list" aria-haspopup="true" disabled></textarea>
 	</div>
-<br />
-	<div class="Complex_Calculator">
-		<div class="Complex_Calculator_Container"> 
-		<div class="form__group field">
-			<input type="input" class="form__field" placeholder="A.RE" name="input_a_re" id='input_a_re' required />
-			<label for="input_a_re" class="form__label">Input A.RE</label>
-		</div>
-		<div class="form__group field">
-			<input type="input" class="form__field" placeholder="A.IM" name="input_a_im" id='input_a_im' required />
-			<label for="input_a_im" class="form__label">Input A.IM</label>
-		</div>
-		<select class="select_operation_complex">
-			<option value="add">+</option>
-			<option value="sub">-</option>
-			<option value="mult">*</option>
-			<option value="div">/</option>
-			<option value="pow">^</option>
-			<option value="prod">prod</option>
-		</select>
-		<div class="form__group field">
-			<input type="input" class="form__field" placeholder="B.RE" name="input_b_re" id='input_b_re' required />
-			<label for="input_b_re" class="form__label">Input B.RE</label>
-		</div>
-		<div class="form__group field">
-			<input type="input" class="form__field" placeholder="B.IM" name="input_b_im" id='input_b_im' required />
-			<label for="input_b_im" class="form__label">Input B.IM</label>
-		</div>
-	</div>
-		<div class="Complex_Calculator_Result_Container">
-			<button class="buttonResultComplex">=</button>
-			<p class="outputComplex"></p>
-		</div>
+	<br \>
+	<div class="operations_buttons">
+		<button class="operand" id="button" data-operand="add">+</button>
+		<button class="operand" id="button" data-operand="sub">-</button>
+		<button class="operand" id="button" data-operand="mult">*</button>
+		<button class="operand" id="button" data-operand="div">/</button>
+		<button class="operand" id="button" data-operand="pow">^</button>
+		<button class="operand" id="button" data-operand="prod">scal</button>
+		<button id="clear">C</button>
 	</div>
 </body>
-
 </html>
