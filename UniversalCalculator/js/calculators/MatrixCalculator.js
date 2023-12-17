@@ -1,15 +1,19 @@
-class MatrixCalculator extends RealCalculator {
+class MatrixCalculator {
+    constructor(calc = new RealCalculator) {
+        this.calc = calc;
+    }
+
     div() { return null; }
     
     add(a, b) {
         return new Matrix(a.values.map(
-            (arr, i) => arr.map((elem, j) => super.add(elem, b.values[i][j]))
+            (arr, i) => arr.map((elem, j) => this.calc.add(elem, b.values[i][j]))
         ));
     }
 
     sub(a, b) {
         return new Matrix(a.values.map(
-            (arr, i) => arr.map((elem, j) => super.sub(elem, b.values[i][j]))
+            (arr, i) => arr.map((elem, j) => this.calc.sub(elem, b.values[i][j]))
         ));
     }
 
@@ -18,11 +22,11 @@ class MatrixCalculator extends RealCalculator {
         const c = this.zero(length);
         for (let i = 0; i < length; i++) {
             for (let j = 0; j < length; j++) {
-                let S = super.zero(length);
+                let S = this.calc.zero(length);
                 for(let k = 0; k < length; k++) {
-                    S = super.add(
+                    S = this.calc.add(
                         S, 
-                        super.mult(
+                        this.calc.mult(
                             a.values[i][k], 
                             b.values[k][j]
                         )
@@ -34,10 +38,9 @@ class MatrixCalculator extends RealCalculator {
         return c;
     }
 
-   
     pow(a, n) {
         if (n === 0) {
-        //   return this.one(a)
+          return this.one(a.values.length);
         } else if (n === 1) {
           return a;
         } else {
@@ -51,7 +54,7 @@ class MatrixCalculator extends RealCalculator {
 
     prod(a, p) {
         return new Matrix(a.values.map(
-            arr => arr.map(elem => super.mult(elem, p))
+            arr => arr.map(elem => this.calc.mult(elem, p))
         ));
     }
 
@@ -60,7 +63,7 @@ class MatrixCalculator extends RealCalculator {
         for (let i = 0; i < length; i++) {
             values.push([]);
             for (let j = 0; j < length; j++) {
-                values[i][j] = super.zero();
+                values[i][j] = this.calc.zero();
             }
         }
         return new Matrix(values);
@@ -71,9 +74,9 @@ class MatrixCalculator extends RealCalculator {
         for (let i=0; i < length; i++) {
             values.push([]);
             for (let j=0; j < length; j++) {
-                values[i][j] = i === j ? super.one() : super.zero();
+                values[i][j] = i === j ? this.calc.one() : this.calc.zero();
             }
         }
-        return new Matrix(values); 
+        return new Matrix(values);
     }
 }

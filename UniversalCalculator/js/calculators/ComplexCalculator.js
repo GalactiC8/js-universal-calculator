@@ -8,7 +8,7 @@ class ComplexCalculator extends RealCalculator {
     }
 
     mult(a, b) {
-        return new Complex(
+            return new Complex(
             a.re * b.re - a.im * b.im,
             a.re * b.im + a.im * b.re
         );
