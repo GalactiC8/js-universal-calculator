@@ -1,51 +1,67 @@
-class VectorCalculator {
-    constructor(calc = new RealCalculator) {
-        this.calc = calc;
-    }
-    
-    div() { return null; }
+class VectorCalculator extends RealCalculator {
+  constructor(calc = new RealCalculator()) {
+    super();
+    this.calc = calc;
+  }
 
-    add(a, b) {
-        return new Vector(a.values.map((elem, i) => this.calc.add(elem, b.values[i])));
-    }
+  div() {
+    return null;
+  }
 
-    sub(a, b) {
-        return new Vector(a.values.map((elem, i) => this.calc.sub(elem, b.values[i])));
-    }
+  add(a, b) {
+    return new Vector(
+      a.values.map((elem, i) => this.calc.add(elem, b.values[i]))
+    );
+  }
 
-    mult(a, b) {
-        return new Vector([
-           this.calc.sub(this.calc.mult(a.values[1], b.values[2]), this.calc.mult(a.values[2], b.values[1])),
-           this.calc.sub(this.calc.mult(a.values[2], b.values[0]), this.calc.mult(a.values[0], b.values[2])),
-           this.calc.sub(this.calc.mult(a.values[0], b.values[1]), this.calc.mult(a.values[1], b.values[0]))
-        ]);
-    }
+  sub(a, b) {
+    return new Vector(
+      a.values.map((elem, i) => this.calc.sub(elem, b.values[i]))
+    );
+  }
 
-    pow(a, n) {
-        let S = this.one(a.values.length);
-        for (let i = 0; i < n; i++) {
-            S = this.mult(S, a);
-        }
-        return S;
-    }
+  mult(a, b) {
+    return new Vector([
+      this.calc.sub(
+        this.calc.mult(a.values[1], b.values[2]),
+        this.calc.mult(a.values[2], b.values[1])
+      ),
+      this.calc.sub(
+        this.calc.mult(a.values[2], b.values[0]),
+        this.calc.mult(a.values[0], b.values[2])
+      ),
+      this.calc.sub(
+        this.calc.mult(a.values[0], b.values[1]),
+        this.calc.mult(a.values[1], b.values[0])
+      ),
+    ]);
+  }
 
-    prod(a, p) {
-        return new Vector(a.values.map(elem => this.calc.prod(elem, p)));
+  pow(a, n) {
+    let S = this.one(a.values.length);
+    for (let i = 0; i < n; i++) {
+      S = this.mult(S, a);
     }
+    return S;
+  }
 
-    zero(length) {
-        const values = [];
-        for (let i = 0; i < length; i++) {
-            values.push(this.calc.zero());
-        }
-        return new Vector(values);
-    }
+  prod(a, p) {
+    return new Vector(a.values.map((elem) => this.calc.prod(elem, p)));
+  }
 
-    one(length) {
-        const values = [];
-        for (let i = 0; i < length; i++) {
-          values.push(i === 0 ? this.calc.one() : this.calc.zero());
-        }
-        return new Vector(values);
+  zero(length) {
+    const values = [];
+    for (let i = 0; i < length; i++) {
+      values.push(this.calc.zero());
     }
+    return new Vector(values);
+  }
+
+  one(length) {
+    const values = [];
+    for (let i = 0; i < length; i++) {
+      values.push(i === 0 ? this.calc.one() : this.calc.zero());
+    }
+    return new Vector(values);
+  }
 }

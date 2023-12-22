@@ -1,39 +1,68 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-	<meta charset="utf-8">
-	<title>Универсальный Калькулятор</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link href="../UniversalCalculator/css/style.css" rel="stylesheet">
-	<link rel="icon" href="favicon.png" type="image/x-icon">
-	<script src="../UniversalCalculator/js/types/Complex.js"></script>
-	<script src="../UniversalCalculator/js/types/Vector.js"></script>
-	<script src="../UniversalCalculator/js/types/Matrix.js"></script>
-	<script src="../UniversalCalculator/js/types/Member.js"></script>
-	<script src="../UniversalCalculator/js/types/Polynomial.js"></script>
-	<script src="../UniversalCalculator/js/calculators/RealCalculator.js"></script>
-	<script src="../UniversalCalculator/js/calculators/ComplexCalculator.js"></script>
-	<script src="../UniversalCalculator/js/calculators/VectorCalculator.js"></script>
-	<script src="../UniversalCalculator/js/calculators/MatrixCalculator.js"></script>
-	<script src="../UniversalCalculator/js/calculators/Calculator.js"></script>
-	<script src="../UniversalCalculator/js/calculators/PolynomialCalculator.js"></script>
-	<script src="../UniversalCalculator/js/main.js"></script>
-</head>
-<body>
-	<div class="textareas">
-		<textarea placeholder="Input A" rows="20"  id="input_a" cols="40" class="ui-autocomplete-input"  role="textbox" aria-autocomplete="list" aria-haspopup="true"></textarea>
-		<textarea placeholder="Input B" rows="20"  id="input_b" cols="40" class="ui-autocomplete-input"  role="textbox" aria-autocomplete="list" aria-haspopup="true"></textarea>
-		<textarea placeholder="Result" rows="20"  id="output_c" cols="40" class="ui-autocomplete-input"  role="textbox" aria-autocomplete="list" aria-haspopup="true" disabled></textarea>
-	</div>
-	<br \>
-	<div class="operations_buttons">
-		<button class="operand" id="button" data-operand="add">+</button>
-		<button class="operand" id="button" data-operand="sub">-</button>
-		<button class="operand" id="button" data-operand="mult">*</button>
-		<button class="operand" id="button" data-operand="div">/</button>
-		<button class="operand" id="button" data-operand="pow">^</button>
-		<button class="operand" id="button" data-operand="prod">scal</button>
-		<button id="clear">C</button>
-	</div>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>Универсальный Калькулятор</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="../UniversalCalculator/css/style.css" rel="stylesheet" />
+    <link rel="icon" href="favicon.png" type="image/x-icon" />
+    <script src="../UniversalCalculator/js/types/Complex.js"></script>
+    <script src="../UniversalCalculator/js/types/Vector.js"></script>
+    <script src="../UniversalCalculator/js/types/Matrix.js"></script>
+    <script src="../UniversalCalculator/js/types/Member.js"></script>
+    <script src="../UniversalCalculator/js/types/Polynomial.js"></script>
+    <script src="../UniversalCalculator/js/calculators/RealCalculator.js"></script>
+    <script src="../UniversalCalculator/js/calculators/ComplexCalculator.js"></script>
+    <script src="../UniversalCalculator/js/calculators/VectorCalculator.js"></script>
+    <script src="../UniversalCalculator/js/calculators/MatrixCalculator.js"></script>
+    <script src="../UniversalCalculator/js/calculators/Calculator.js"></script>
+    <script src="../UniversalCalculator/js/calculators/PolynomialCalculator.js"></script>
+    <script src="../UniversalCalculator/js/main.js"></script>
+  </head>
+  <body>
+    <div class="textareas">
+      <textarea
+        placeholder="Input A"
+        rows="20"
+        id="input_a"
+        cols="40"
+        class="ui-autocomplete-input"
+        role="textbox"
+        aria-autocomplete="list"
+        aria-haspopup="true"
+      ></textarea>
+      <textarea
+        placeholder="Input B"
+        rows="20"
+        id="input_b"
+        cols="40"
+        class="ui-autocomplete-input"
+        role="textbox"
+        aria-autocomplete="list"
+        aria-haspopup="true"
+      ></textarea>
+      <textarea
+        placeholder="Result"
+        rows="20"
+        id="output_c"
+        cols="40"
+        class="ui-autocomplete-input"
+        role="textbox"
+        aria-autocomplete="list"
+        aria-haspopup="true"
+        disabled
+      ></textarea>
+    </div>
+    <br \ />
+    <div class="operations_buttons">
+      <button class="operand" id="button" data-operand="add">+</button>
+      <button class="operand" id="button" data-operand="sub">-</button>
+      <button class="operand" id="button" data-operand="mult">*</button>
+      <button class="operand" id="button" data-operand="div">/</button>
+      <button class="operand" id="button" data-operand="pow">^</button>
+      <button class="operand" id="button" data-operand="prod">scal</button>
+      <button id="clear">C</button>
+    </div>
+    <p class="text"></p>
+  </body>
 </html>
